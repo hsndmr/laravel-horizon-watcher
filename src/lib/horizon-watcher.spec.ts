@@ -40,7 +40,7 @@ describe('HorizonWatcher', () => {
 
     fs.writeFileSync(`${mockApp}/laravel-with-horizon/app/file.php`, 'test');
 
-    await wait(1000);
+    await wait(3000);
     expect(onChange).toBeCalledTimes(1);
     await horizonWatcher.close();
     fs.writeFileSync(`${mockApp}/laravel-with-horizon/app/file.php`, '');
