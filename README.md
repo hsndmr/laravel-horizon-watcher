@@ -4,7 +4,7 @@ This package includes a command called laravel-horizon-watcher that
 will start the Horizon service and automatically restart it whenever 
 a PHP file is created, modified, or deleted. 
 It can be used with any Laravel application without requiring any additional configuration.
-This.package is inspired by https://github.com/spatie/laravel-horizon-watcher
+This package is inspired by https://github.com/spatie/laravel-horizon-watcher
 
 ## Installation
 
