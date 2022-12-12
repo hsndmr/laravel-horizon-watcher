@@ -25,7 +25,6 @@ describe('horizonProcess', () => {
     horizonProcess.spawnHorizon({
       onStdout: onStdout,
       onClose: jest.fn(),
-      onExit: jest.fn(),
     });
 
     await wait(100);
@@ -40,17 +39,14 @@ describe('horizonProcess', () => {
     });
     const onStdout = jest.fn();
     const onClose = jest.fn();
-    const onExit = jest.fn();
 
     await horizonProcess.spawnHorizon({
       onStdout,
       onClose,
-      onExit,
     });
 
     expect(onStdout).toBeCalledTimes(3);
     expect(onClose).toHaveBeenCalled();
-    expect(onExit).toHaveBeenCalled();
   });
   it('should throw error if there is no artisan file', async () => {
     const mockLaravelApp = path.join(
@@ -64,18 +60,15 @@ describe('horizonProcess', () => {
     });
     const onStdout = jest.fn();
     const onClose = jest.fn();
-    const onExit = jest.fn();
 
     const stdout = await horizonProcess.spawnHorizon({
       onStdout,
       onClose,
-      onExit,
     });
 
-    expect(stdout.includes('Could not open input file')).toBe(true);
+    expect(stdout.includes('closed')).toBe(true);
 
     expect(onStdout).toHaveBeenCalled();
     expect(onClose).toHaveBeenCalled();
-    expect(onExit).toHaveBeenCalled();
   });
 });

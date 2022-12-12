@@ -6,5 +6,4 @@ export interface HorizonProcessArgs {
 export interface HorizonProcessSpawnArgs {
   onStdout: (data: string) => void;
   onClose: (code: number) => void;
-  onExit: (code: number) => void;
 }
