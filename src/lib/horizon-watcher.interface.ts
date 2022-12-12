@@ -2,7 +2,7 @@ import * as fs from 'fs';
 
 export interface HorizonWatcherArgs {
   path: string;
-  phpInterpreter?: string;
+  pathsToWatch?: string;
 }
 
 export interface HorizonWatcherWatchArgs {
