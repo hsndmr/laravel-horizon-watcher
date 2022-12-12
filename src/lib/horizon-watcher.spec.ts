@@ -61,4 +61,15 @@ describe('HorizonWatcher', () => {
       'path/composer.lock',
     ]);
   });
+
+  it('should get paths with prefix app path and custom paths', () => {
+    const horizonWatcher = new HorizonWatcher({
+      path: 'path',
+      pathsToWatch: 'custom-path,   custom-path-2 ',
+    });
+
+    const paths = horizonWatcher.getPaths();
+
+    expect(paths).toEqual(['path/custom-path', 'path/custom-path-2']);
+  });
 });

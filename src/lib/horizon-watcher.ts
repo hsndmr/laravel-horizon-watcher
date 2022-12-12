@@ -17,7 +17,11 @@ export class HorizonWatcher {
 
   watcher?: FSWatcher;
 
-  constructor(private args: HorizonWatcherArgs) {}
+  constructor(private args: HorizonWatcherArgs) {
+    if (args.pathsToWatch) {
+      this.paths = args.pathsToWatch.split(',').map((path) => path.trim());
+    }
+  }
 
   isHorizonInstalled() {
     return fileExists(`${this.args.path}/vendor/laravel/horizon/composer.json`);
