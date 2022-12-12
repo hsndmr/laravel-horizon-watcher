@@ -20,7 +20,6 @@ const yargs = require('yargs')
         });
     },
     (argv) => {
-      if (argv.verbose) console.info(`start server on :${argv.port}`);
       cli.start(argv);
     }
   )
