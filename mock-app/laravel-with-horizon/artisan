@@ -1,0 +1,13 @@
+#!/usr/bin/env php
+
+<?php
+
+$count = 0;
+
+while($count<2) {
+  $count++;
+  echo $count.PHP_EOL;
+  sleep(1);
+}
+
+echo "Done".PHP_EOL;
