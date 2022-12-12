@@ -43,6 +43,7 @@ describe('HorizonWatcher', () => {
     await wait(1000);
     expect(onChange).toBeCalledTimes(1);
     await horizonWatcher.close();
+    fs.writeFileSync(`${mockApp}/laravel-with-horizon/app/file.php`, '');
   });
 
   it('should get paths with prefix app path', () => {
